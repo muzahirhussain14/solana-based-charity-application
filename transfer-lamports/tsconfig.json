@@ -1,0 +1,28 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
+  "compilerOptions": {
+    "declaration": true,
+    //"moduleResolution": "node",
+    //"noImplicitAny": false,
+    "module": "commonjs",
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "paths": {
+        "*": [
+            "node_modules/*",
+            "client/@types/*"
+        ]
+    }
+  },
+  "include": ["src/client/**/*"],
+  "exclude": ["node_modules"]
+}
