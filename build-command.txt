@@ -1,0 +1,34 @@
+Solana Program SO file:
+/home/muzahir/Desktop/Solana/transfer-lamports/dist/program
+
+
+- Inside main directory, run
+		npm run build:program-rust
+
+		
+- To deploy a program:
+	solana program deploy /home/muzahir/Desktop/Solana/transfer-lamports/dist/program/spl_example_transfer_lamports.so
+In order for this command to run successfully, make sure the solana-test validator is already running in the background.
+This command will return a program id.
+
+- After deploying, use this command to run code
+		npm run start
+
+
+apt upgrade
+apt update
+apt install nodejs
+apt install npm
+apt install python3-pip
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+sh -c "$(curl -sSfL https://release.solana.com/v1.5.7/install)"
+
+
+
+
+./scripts/cargo-install-all.sh .
+source $HOME/.cargo/env
+export PATH="/root/.local/share/solana/install/active_release/bin:$PATH"
+export RUST_LOG=solana_runtime::system_instruction_processor=trace,solana_runtime::message_processor=debug,solana_bpf_loader=debug,solana_rbpf=debug
+solana-test-validator --log 
+
